@@ -29,6 +29,11 @@ class MessagesController extends Controller
     // postでmessages/にアクセスされた場合の「新規登録処理」
     public function store(Request $request)
     {
+        // バリデーション
+        $request->validate([
+            'content' => 'required|max:255',
+        ]);
+
         // メッセージを作成
         $message = new Message();
         $message->content = $request->content;
@@ -60,6 +65,11 @@ class MessagesController extends Controller
     // putまたはpatchでmessages/（任意のid）にアクセスされた場合の「更新処理」
     public function update(Request $request, $id)
     {
+        // バリデーション
+        $request->validate([
+            'content' => 'required|max:255',
+        ]);
+
         // idに該当するメッセージを取得
         $message = Message::findOrFail($id);
         // メッセージを更新
