@@ -28,6 +28,12 @@
 </table>
 @endif
 
+<!-- ページネーション -->
+<div class="mt-4">
+    {{ $messages->links() }}
+</div>
+
 <!-- メッセージ作成ページへのリンク -->
 <a class="btn btn-primary" href="{{ route('messages.create') }}">新規メッセージの投稿</a>
+
 @endsection
