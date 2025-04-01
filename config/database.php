@@ -14,7 +14,7 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
-
+    // .envファイルで接続先をsupabaseに変更済
     'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
